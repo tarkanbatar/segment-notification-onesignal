@@ -1,0 +1,7 @@
+{
+    "require": {
+        "symfony/http-client": "^6.0",
+        "nyholm/psr7": "^1.4",
+        "norkunas/onesignal-php-api": "^2.8"
+    }
+}
