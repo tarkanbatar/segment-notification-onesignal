@@ -2,11 +2,11 @@
     function oneSignalApi() {
         $curl = curl_init();
         $headers = array(
-            'Authorization: Basic your_APIKEY',
+            'Authorization: Basic YOUR_APIKEY',
             'Content-Type: application/json; charset=utf-8'
         );
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://onesignal.com/api/v1/players/csv_export?app_id=your_APPID",
+            CURLOPT_URL => "https://onesignal.com/api/v1/players/csv_export?app_id=YOUR APP ID",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 0,
@@ -19,17 +19,12 @@
         curl_close($curl);
         return $response;
     }
-    $userIdListLink = substr(oneSignalApi(),17,-2);
-    $userIdListUrl = $userIdListLink." ";
-    $filename= basename($userIdListUrl);
+    function getUserFile(){
+        $userIdListLink = substr(oneSignalApi(),17,-2);
+        $userIdListUrl = $userIdListLink." ";
 
-    $ch = curl_init($userIdListUrl);
-    $dir = './';
-    $saveFileLocation = $dir.$filename;
+        $content = file_get_contents($userIdListUrl);
+        file_put_contents("app-user-informations.csv.gz",$content);
+    }
 
-    $fp = fopen($saveFileLocation, 'wb');
-
-    curl_setopt($ch, CURLOPT_FILE,$fp);
-
-
-    echo $userIdListLink;
+    getUserFile();

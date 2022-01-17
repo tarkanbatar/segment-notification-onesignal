@@ -9,7 +9,7 @@ use Nyholm\Psr7\Factory\Psr17Factory;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$config = new Config('APP ID','API KEY','AUTH KEY');
+$config = new Config('fd4cc3d1-03f7-48b0-ad80-937081dc386f','NjdjMjVlNDUtYTVjMS00OTE3LTk5ZjctNGM0OGUwOTY3ODFj','NzIyNTIzMDgtNTllMi00NTY5LWI0OGYtMTkwZTM0MmE5NTg3');
 $httpClient = new Psr18Client();
 $requestFactory = $streamFactory = new Psr17Factory();
 
