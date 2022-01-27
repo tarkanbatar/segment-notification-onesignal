@@ -18,6 +18,8 @@ $headings = array(
     "en" => 'Tarkan Batar'
 );
 
+// Nyholm fonksiyonlarını kontrol et çıkarabiliyorsan çıkar, resim ekle
+
 $response = $oneSignal->notifications()->add([
    'contents'=>[
      "en" => 'Şampiyon TS',
