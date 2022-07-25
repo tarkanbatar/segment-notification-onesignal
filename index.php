@@ -20,7 +20,7 @@ $headings = array(
 
 $response = $oneSignal->notifications()->add([
    'contents'=>[
-     "en" => 'Şampiyon TS',
+     "en" => 'Notification Message',
    ],
     'content_available' => true,
     'included_segments' => array(
