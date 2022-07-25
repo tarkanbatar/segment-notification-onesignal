@@ -18,8 +18,6 @@ $headings = array(
     "en" => 'Tarkan Batar'
 );
 
-// Nyholm fonksiyonlarını kontrol et çıkarabiliyorsan çıkar, resim ekle
-
 $response = $oneSignal->notifications()->add([
    'contents'=>[
      "en" => 'Şampiyon TS',
@@ -28,14 +26,14 @@ $response = $oneSignal->notifications()->add([
     'included_segments' => array(
         'test'
     ),
-//    'filters' => [
-//        [
-//            'fields' => 'tag',
-//            'key' => 'user_type',
-//            'relation' => '=',
-//            'value' => ' basic'
-//        ]
-//    ],
+    'filters' => [
+        [
+            'fields' => 'tag',
+            'key' => 'user_type',
+            'relation' => '=',
+            'value' => ' basic'
+        ]
+    ],
     'headings' => $headings,
     'data' => ['foo'=>'bar']
 ]);
